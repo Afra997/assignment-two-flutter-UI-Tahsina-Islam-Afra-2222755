@@ -4,7 +4,7 @@ import '../widgets/custom_header.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  // Define the colors used in the design for easy reference
+  // Define colors
   static const Color primaryColor = Color(0xFF5E39DC);
   static const Color secondaryColor = Color(0xFF6748D8);
 
@@ -14,26 +14,21 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // --- 1. Top Welcome Header (White Background) ---
           const CustomHeader(),
 
           const SizedBox(height: 20),
 
-          // --- 2. Purple Balance Container ---
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Container(
               padding: const EdgeInsets.all(18.0),
               decoration: BoxDecoration(
                 color: primaryColor,
-                borderRadius: BorderRadius.circular(
-                  16,
-                ), // Added rounded corners for the box
+                borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Total Balance Label and Print Icon
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -86,34 +81,26 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          // lib/screens/home_page.dart (Around line 150, inside the main build method)
-          // lib/screens/home_page.dart (Inside the main build method)
-
-          // ... (Code above this remains unchanged) ...
           const SizedBox(height: 20),
 
-          // --- Action Buttons Row ---
+          //--- Action Buttons Row ---
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
-              // Use spaceAround to distribute the buttons evenly across the width.
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                // 1. Transfer Button
                 _buildActionButton(
                   icon: Icons.swap_horiz,
                   label: 'Transfer',
                   onTap: () {},
                 ),
 
-                // 2. Pay Bills Button
                 _buildActionButton(
                   icon: Icons.receipt_long,
                   label: 'Pay Bills',
                   onTap: () {},
                 ),
 
-                // 3. Invest Button
                 _buildActionButton(
                   icon: Icons.trending_up,
                   label: 'Invest',
@@ -125,10 +112,6 @@ class HomePage extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          // ... (Code below this remains unchanged) ...
-          // ... (Recent Transactions Header follows)
-
-          // --- 4. Recent Transactions Header and List ---
           // Recent Transactions Header Row
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -155,7 +138,7 @@ class HomePage extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          // Transactions List (Uses _buildTransactionItem helper)
+          // Transactions List
           Column(
             children: [
               _buildTransactionItem(
@@ -215,9 +198,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-  // --- Helper Methods ---
 
-  // Helper method to create a single transaction row
   Widget _buildTransactionItem({
     required IconData icon,
     required Color iconColor,
@@ -227,10 +208,8 @@ class HomePage extends StatelessWidget {
     required String amount,
     required bool isIncome,
   }) {
-    // The amount color changes based on whether it is income or expense.
     final amountColor = isIncome ? Colors.green : Colors.red.shade700;
 
-    // Clean the amount for display
     final displayAmount = amount.replaceAll(RegExp(r'[+\-]'), '');
 
     return Padding(
@@ -238,10 +217,9 @@ class HomePage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Left side: Icon, Name, and Category
           Row(
             children: [
-              // Icon Container (small circle)
+              // Icon Container
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -286,10 +264,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // A helper method to create the consistent button style
-  // A helper method to create the consistent button style
-  // A helper method to create the consistent button style
-  // A helper method to create the consistent button style
   Widget _buildActionButton({
     required IconData icon,
     required String label,
@@ -298,7 +272,6 @@ class HomePage extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        // Give the entire button area padding and a fixed size (width is crucial for spacing)
         width: 100,
         padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
         decoration: BoxDecoration(
@@ -306,12 +279,11 @@ class HomePage extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.grey.shade200, width: 1.0),
           boxShadow: [
-            // <--- ADDED SUBTLE SHADOW HERE
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1), // Very light shadow color
+              color: Colors.grey.withOpacity(0.1),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: const Offset(0, 3), // Slightly lower shadow
+              offset: const Offset(0, 3),
             ),
           ],
         ),

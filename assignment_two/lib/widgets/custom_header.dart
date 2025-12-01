@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screens/home_page.dart'; // To access primaryColor
+import '../screens/home_page.dart';
 
 class CustomHeader extends StatelessWidget {
   const CustomHeader({super.key});
@@ -7,12 +7,7 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        16,
-        40,
-        16,
-        0,
-      ), // Extra top padding for status bar
+      padding: const EdgeInsets.fromLTRB(16, 40, 16, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +44,7 @@ class CustomHeader extends StatelessWidget {
                     style: TextStyle(color: Colors.black54, fontSize: 14),
                   ),
                   Text(
-                    'TAHSINA ISLAM AFRA', // Replace with your name!
+                    'TAHSINA ISLAM AFRA',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
