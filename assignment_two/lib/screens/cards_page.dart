@@ -176,12 +176,12 @@ class _CustomCreditCard extends StatelessWidget {
               width: 150,
               height: 150,
               decoration: BoxDecoration(
-                color: Colors.tealAccent.withOpacity(0.3),
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(100),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.white.withOpacity(0.2),
-                    blurRadius: 120,
+                    color: Colors.tealAccent.shade700.withOpacity( 0.3),
+                    blurRadius: 90,
                   ),
                 ],
               ),
@@ -195,13 +195,10 @@ class _CustomCreditCard extends StatelessWidget {
               width: 150,
               height: 150,
               decoration: BoxDecoration(
-                color: Colors.indigo.withOpacity(0.3),
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(100),
                 boxShadow: [
-                  BoxShadow(
-                    color: Colors.white.withOpacity(0.2),
-                    blurRadius: 120,
-                  ),
+                  BoxShadow(color: Colors.indigo.shade600, blurRadius: 90),
                 ],
               ),
             ),
